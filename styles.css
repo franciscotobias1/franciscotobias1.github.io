@@ -5,3 +5,24 @@ body {
 iframe {
   border: 0;
 }
+
+.poema {
+  background-color: salmon;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.poema p {
+  margin: 8px 0;
+  font-style: italic;
+}
+
+.poema p:nth-child(odd) {
+  color: white;
+}
+
+.poema p:nth-child(even) {
+  color: yellow;
+}

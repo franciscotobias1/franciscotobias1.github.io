@@ -17,6 +17,7 @@
         width: 150px;
         border-radius: 20px;
       }
+
       .poema {
         background-color: salmon;
         width: fit-content;
@@ -60,8 +61,15 @@
         Nesta página apresento alguns conteúdos multimédia sobre a minha cidade,
         Montemor-o-Novo.
       </p>
+
+      <nav class="ancoras">
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poesia">Poesia</a>
+      </nav>
+
       <section>
-        <h3>Fotografias</h3>
+        <h3 id="fotografias">Fotografias</h3>
         <div class="fotografias">
           <img src="images/castelo.jpg" alt="Castelo de Montemor-o-Novo" />
           <img
@@ -77,20 +85,22 @@
         </div>
       </section>
 
-      <h3>Vídeo</h3>
+      <section>
+        <h3 id="video">Vídeo</h3>
 
-      <p>Vídeo sobre Montemor-o-Novo:</p>
+        <p>Vídeo sobre Montemor-o-Novo:</p>
 
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/_7a29-Ga6WY"
-        title="Vídeo sobre Montemor-o-Novo"
-        allowfullscreen
-      ></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/_7a29-Ga6WY"
+          title="Vídeo sobre Montemor-o-Novo"
+          allowfullscreen
+        ></iframe>
+      </section>
 
       <section>
-        <h3>Poesia</h3>
+        <h3 id="poesia">Poesia</h3>
         <div class="poema">
           <p>No outeiro de pedra dorme o castelo,</p>
           <p>guarda de um tempo que o vento não leva.</p>

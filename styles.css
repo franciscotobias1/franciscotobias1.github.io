@@ -58,14 +58,12 @@ nav a {
   font-weight: 600;
   transition:
     background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
+    color 0.25s ease;
 }
 
 nav a:hover {
   background-color: white;
   color: #e07a5f;
-  transform: translateY(-2px);
 }
 
 nav.ancoras a {

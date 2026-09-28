@@ -57,8 +57,8 @@ nav a {
   border-radius: 999px;
   font-weight: 600;
   transition:
-  background-color 0.25s ease,
-  color 0.25s ease;
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 nav a:hover {
@@ -78,6 +78,8 @@ nav.ancoras a:hover {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 
@@ -120,4 +122,46 @@ iframe {
   max-width: 100%;
   display: block;
   margin: 20px auto;
+}
+
+
+@media (width <= 600px) {
+  body {
+    padding-bottom: 60px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  main {
+    margin: 12px;
+    width: auto;
+    padding: 20px;
+  }
+
+  header nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    flex-wrap: nowrap;
+    gap: 0;
+    background-color: indigo;
+  }
+
+  header nav a {
+    flex: 1;
+    padding: 16px 4px;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  header nav a:hover {
+    background-color: white;
+    color: indigo;
+  }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Localização - Montemor-o-Novo</title>
     <link rel="stylesheet" href="../styles.css" />
+
     <style>
       .localizacao {
         display: flex;
@@ -27,7 +28,7 @@
         margin: 0;
       }
 
-      @media (max-width: 600px) {
+      @media (width <= 600px) {
         .localizacao {
           flex-direction: column;
           align-items: stretch;
@@ -45,9 +46,11 @@
       }
     </style>
   </head>
+
   <body>
     <header>
       <h1>Montemor-o-Novo</h1>
+
       <nav aria-label="Navegação principal">
         <a href="../index.html">Home</a>
         <a href="local.html">Localização</a>
@@ -55,22 +58,27 @@
         <a href="info.html">Informação</a>
       </nav>
     </header>
+
     <main>
       <h2>Localização</h2>
+
       <div class="localizacao">
         <div class="localizacao-texto">
           <h3>Onde fica Montemor-o-Novo?</h3>
+
           <p>
             Montemor-o-Novo situa-se no distrito de Évora, na região do
             Alentejo. É uma cidade marcada pela sua história, pelo castelo e
             pelas paisagens características do montado alentejano.
           </p>
+
           <p>
             O concelho encontra-se aproximadamente a meio caminho entre Lisboa
             e Évora, sendo atravessado por importantes vias rodoviárias que
             facilitam o acesso à cidade.
           </p>
         </div>
+
         <div class="localizacao-mapa">
           <iframe
             src="https://www.google.com/maps?q=Montemor-o-Novo&output=embed"
@@ -81,6 +89,7 @@
         </div>
       </div>
     </main>
+
     <footer>
       <p>DIW 2026</p>
     </footer>

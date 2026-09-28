@@ -104,6 +104,57 @@
           align-items: center;
         }
       }
+
+      @media (max-width: 600px) {
+        section {
+          min-height: auto;
+          padding: 20px 15px;
+        }
+
+        #inicio {
+          min-height: 100vh;
+        }
+
+        nav ul {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+
+        nav a {
+          display: block;
+          padding: 8px 12px;
+        }
+
+        .hero-texto {
+          position: static;
+          padding-top: 160px;
+          padding-bottom: 40px;
+        }
+
+        .hero-texto h1 {
+          font-size: 2rem;
+        }
+
+        .botao {
+          display: block;
+          width: fit-content;
+          margin-bottom: 12px;
+        }
+
+        .cards {
+          flex-direction: column;
+        }
+
+        .card {
+          width: 100%;
+        }
+
+        .disciplina-conteudo img {
+          max-width: 100%;
+          margin-top: 20px;
+        }
+      }
     </style>
   </head>
 
@@ -126,6 +177,7 @@
 
     <section id="projetos">
       <h2>Projetos</h2>
+
       <div class="cards">
         <article class="card">
           <img
@@ -146,6 +198,7 @@
           <p>A minha cidade, agora com o CSS implementado.</p>
           <a href="lab2/index.html">Lab 2</a>
         </article>
+
         <article class="card">
           <img
             src="lab3/images/monvista.jpg"
@@ -160,6 +213,7 @@
 
     <section id="disciplina">
       <h2>Interfaces Web</h2>
+
       <div class="disciplina-conteudo">
         <div>
           <p>
@@ -173,14 +227,17 @@
             </a>
             abordaremos as seguintes tecnologias Web &#127760;:
           </p>
+
           <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
             <li>React e Next.js</li>
           </ul>
+
           <p>Iremos usar soluções criativas!</p>
         </div>
+
         <!-- Troca pela tua wordcloud, ex.: images/wordcloud.png -->
         <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
       </div>

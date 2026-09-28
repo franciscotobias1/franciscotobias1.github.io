@@ -5,6 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia - Montemor-o-Novo</title>
     <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+
+      .multimedia-section {
+        min-height: 100vh;
+        margin: 0 -36px 24px;
+        padding: 50px 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+
+      #fotografias {
+        background-color: #f2cc8f;
+      }
+
+      #video {
+        background-color: #b8d8d8;
+      }
+
+      #poesia {
+        background-color: #e07a5f;
+      }
+
+      #poesia h3 {
+        color: white;
+      }
+
+      /* Fotografia emblemática */
+      .imagem-emblematica {
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        overflow: hidden;
+      }
+
+      .imagem-emblematica img {
+        width: 100%;
+        max-width: none;
+        height: 70vh;
+        object-fit: cover;
+        border-radius: 0;
+      }
+
+      .frase-emblematica {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        color: white;
+        font-size: 5vw;
+        font-weight: bold;
+        text-shadow: 3px 3px 8px black;
+      }
+
+
+      .fotografias img {
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+      }
+
+      .fotografias img:hover {
+        transform: scale(1.08);
+        opacity: 0.8;
+      }
+
+
+      .fotografias {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+
+      .video-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+
+      #poesia .poema {
+        background-color: #4a314d;
+        margin: 20px auto;
+      }
+
+      @media (max-width: 600px) {
+        .multimedia-section {
+          margin: 0 -20px 20px;
+          padding: 35px 20px;
+        }
+
+        .imagem-emblematica img {
+          height: 55vh;
+        }
+
+        .frase-emblematica {
+          font-size: 8vw;
+        }
+
+        .fotografias {
+          gap: 15px;
+        }
+
+        .fotografias img {
+          width: 130px;
+        }
+
+        .video-container iframe {
+          width: 100%;
+          height: 220px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -33,39 +152,81 @@
         <a href="#poesia">Poesia</a>
       </nav>
 
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
+
+      <section class="imagem-emblematica">
+        <img
+          src="images/monvista.jpg"
+          alt="Vista de Montemor-o-Novo e do seu castelo"
+        />
+
+        <p class="frase-emblematica">
+          Montemor-o-Novo, onde a história encontra o Alentejo.
+        </p>
+      </section>
+
+      <section class="multimedia-section" id="fotografias">
+        <h3>Fotografias</h3>
 
         <div class="fotografias">
-          <img src="images/castelo.jpg" alt="Castelo de Montemor-o-Novo" />
+          <img
+            src="images/castelo.jpg"
+            alt="Castelo de Montemor-o-Novo"
+          />
+
           <img
             src="images/nsravisitacao.jpg"
             alt="Igreja da Nossa Senhora da Visitação"
           />
-          <img src="images/grutasescou.jpg" alt="Grutas do Escoural" />
-          <img src="images/montado.jpeg" alt="Montado" />
-          <img src="images/vistaaerea.jpg" alt="Paisagem da cidade" />
-          <img src="images/arquio.jpg" alt="Escavações arqueológicas" />
-          <img src="images/muralha.jpeg" alt="Muralha do Castelo" />
-          <img src="images/arquitetura.jpeg" alt="Arquitetura da cidade" />
+
+          <img
+            src="images/grutasescou.jpg"
+            alt="Grutas do Escoural"
+          />
+
+          <img src="images/montado.jpeg" alt="Montado alentejano" />
+
+          <img
+            src="images/vistaaerea.jpg"
+            alt="Vista aérea de Montemor-o-Novo"
+          />
+
+          <img
+            src="images/arquio.jpg"
+            alt="Escavações arqueológicas"
+          />
+
+          <img
+            src="images/muralha.jpeg"
+            alt="Muralha do Castelo"
+          />
+
+          <img
+            src="images/arquitetura.jpeg"
+            alt="Arquitetura de Montemor-o-Novo"
+          />
         </div>
       </section>
 
-      <h3 id="video">Vídeo</h3>
 
-      <p>Vídeo sobre Montemor-o-Novo:</p>
+      <section class="multimedia-section" id="video">
+        <h3>Vídeo</h3>
 
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/_7a29-Ga6WY"
-        title="Vídeo sobre Montemor-o-Novo"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
+        <p>Vídeo sobre Montemor-o-Novo:</p>
 
-      <section>
-        <h3 id="poesia">Poesia</h3>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/_7a29-Ga6WY"
+            title="Vídeo sobre Montemor-o-Novo"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+
+      <section class="multimedia-section" id="poesia">
+        <h3>Poesia</h3>
 
         <div class="poema">
           <p>No outeiro de pedra dorme o castelo,</p>

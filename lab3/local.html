@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Localização - Montemor-o-Novo</title>
     <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      .localizacao {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        min-height: 70vh;
+      }
+
+      .localizacao-texto {
+        flex: 1;
+      }
+
+      .localizacao-mapa {
+        flex: 1;
+      }
+
+      .localizacao-mapa iframe {
+        width: 100%;
+        height: 450px;
+        margin: 0;
+      }
+
+      @media (max-width: 600px) {
+        .localizacao {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 25px;
+        }
+
+        .localizacao-texto,
+        .localizacao-mapa {
+          width: 100%;
+        }
+
+        .localizacao-mapa iframe {
+          height: 350px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -19,41 +59,35 @@
       </nav>
     </header>
 
-    <img
-      src="images/monvista.jpg"
-      alt="Vista aérea de Montemor-o-Novo"
-      class="hero"
-    />
-
     <main>
       <h2>Localização</h2>
 
-      <p>
-        Montemor-o-Novo situa-se no distrito de Évora, na região do Alentejo, em
-        Portugal.
-      </p>
+      <div class="localizacao">
+        <div class="localizacao-texto">
+          <h3>Onde fica Montemor-o-Novo?</h3>
 
-      <p>
-        A cidade encontra-se a cerca de 30 quilómetros de Évora e é atravessada
-        por importantes vias rodoviárias, das quais destacaria a N2.
-      </p>
+          <p>
+            Montemor-o-Novo situa-se no distrito de Évora, na região do
+            Alentejo. É uma cidade marcada pela sua história, pelo castelo e
+            pelas paisagens características do montado alentejano.
+          </p>
 
-      <h3>Onde fica?</h3>
+          <p>
+            O concelho encontra-se aproximadamente a meio caminho entre Lisboa
+            e Évora, sendo atravessado por importantes vias rodoviárias que
+            facilitam o acesso à cidade.
+          </p>
+        </div>
 
-      <p>
-        Montemor-o-Novo está localizada numa zona típica do Alentejo, rodeada
-        por campos e paisagens naturais.
-      </p>
-
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49855.40283037425!2d-8.252417390609732!3d38.64973850827925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19942c1e1f1e9f%3A0x6752760b11ff09d8!2sMontemor-o-Novo!5e0!3m2!1sen!2spt!4v1789646189350!5m2!1sen!2spt"
-        width="800"
-        height="600"
-        title="Mapa de Montemor-o-Novo"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
+        <div class="localizacao-mapa">
+          <iframe
+            src="https://www.google.com/maps?q=Montemor-o-Novo&output=embed"
+            title="Mapa de localização de Montemor-o-Novo"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </main>
 
     <footer>

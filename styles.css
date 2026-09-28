@@ -157,6 +157,66 @@ tr:nth-child(even) {
 .curiosidades li {
   margin-bottom: 8px;
 }
+
+.fotografias {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.fotografias img {
+  width: 150px;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.fotografias img:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.poema {
+  background-color: salmon;
+  width: fit-content;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.poema p {
+  margin: 8px 0;
+  font-style: italic;
+}
+
+.poema p:nth-child(odd) {
+  color: white;
+}
+
+.poema p:nth-child(even) {
+  color: yellow;
+}
+
+.localizacao {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.localizacao-texto,
+.localizacao-mapa {
+  flex: 1;
+}
+
+.localizacao-mapa iframe {
+  width: 100%;
+  height: 450px;
+  margin: 0;
+}
+
 .video-background {
   position: relative;
   width: 100vw;
@@ -236,66 +296,6 @@ tr:nth-child(even) {
 }
 
 @media (width <= 600px) {
-  .video-background {
-    min-height: 80vh;
-  }
-
-  .video-background-conteudo {
-    padding: 20px;
-  }
-
-  .video-background-conteudo h2 {
-    font-size: 10vw;
-  }
-
-  .video-background-conteudo p {
-    font-size: 1rem;
-  }
-
-  .parallax {
-    min-height: 80vh;
-    background-attachment: scroll;
-  }
-
-  .parallax-conteudo {
-    margin: 20px;
-    padding: 25px;
-  }
-}
-.fotografias {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 10px;
-}
-
-.fotografias img {
-  width: 150px;
-  border-radius: 20px;
-}
-
-.poema {
-  background-color: salmon;
-  width: fit-content;
-  max-width: 90%;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px auto;
-}
-
-.poema p {
-  margin: 8px 0;
-  font-style: italic;
-}
-
-.poema p:nth-child(odd) {
-  color: white;
-}
-
-.poema p:nth-child(even) {
-  color: yellow;
-}
-
-@media (width <= 600px) {
   body {
     padding-bottom: 60px;
   }
@@ -333,5 +333,46 @@ tr:nth-child(even) {
   header nav a:hover {
     background-color: white;
     color: indigo;
+  }
+
+  .localizacao {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  .localizacao-texto,
+  .localizacao-mapa {
+    width: 100%;
+  }
+
+  .localizacao-mapa iframe {
+    height: 350px;
+  }
+
+  .video-background {
+    min-height: 80vh;
+  }
+
+  .video-background-conteudo {
+    padding: 20px;
+  }
+
+  .video-background-conteudo h2 {
+    font-size: 10vw;
+  }
+
+  .video-background-conteudo p {
+    font-size: 1rem;
+  }
+
+  .parallax {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+
+  .parallax-conteudo {
+    margin: 20px;
+    padding: 25px;
   }
 }

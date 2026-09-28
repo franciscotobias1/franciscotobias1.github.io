@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Videotutoriais - Francisco Tobias</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f1de;
+        color: #263238;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 40px;
+      }
+
+      /* =========================
+         HERO
+      ========================= */
+
+      #inicio {
+        min-height: 70vh;
+        position: relative;
+        color: white;
+        background-color: darkslategray;
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+          url("lab2/images/monvista.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        padding: 10px 16px;
+        border-radius: 20px;
+
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: tomato;
+        transform: translateY(-3px);
+      }
+
+      .hero-texto {
+        position: absolute;
+        left: 60px;
+        bottom: 100px;
+        max-width: 700px;
+
+        text-shadow: 2px 2px 5px black;
+      }
+
+      .hero-texto h1 {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+      }
+
+      .hero-texto p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+
+      /* =========================
+         VIDEOTUTORIAIS
+      ========================= */
+
+      #videotutoriais {
+        background-color: khaki;
+      }
+
+      #videotutoriais > h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+      }
+
+      .tutorials {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .tutorial {
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .tutorial:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .tutorial h3 {
+        margin-top: 0;
+        color: darkslategray;
+        font-size: 1.4rem;
+      }
+
+      .tutorial p {
+        line-height: 1.5;
+      }
+
+      .video {
+        width: 100%;
+        height: 315px;
+
+        border: none;
+        border-radius: 12px;
+
+        display: block;
+        margin: 20px 0;
+      }
+
+      /* =========================
+         CODEPEN
+      ========================= */
+
+      .codepen {
+        margin-top: 15px;
+      }
+
+      .codepen p {
+        margin-bottom: 10px;
+      }
+
+      .codepen-link {
+        display: inline-block;
+
+        padding: 10px 20px;
+
+        background-color: tomato;
+        color: white;
+
+        text-decoration: none;
+        font-weight: bold;
+
+        border-radius: 20px;
+
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .codepen-link:hover {
+        background-color: darkslategray;
+        transform: translateY(-3px);
+      }
+
+      /* =========================
+         CODEPENS
+      ========================= */
+
+      #codepens {
+        background-color: seagreen;
+        color: white;
+      }
+
+      #codepens .conteudo {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #codepens h2 {
+        font-size: 2.5rem;
+      }
+
+      .codepens-grid {
+        margin-top: 40px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .codepen-card {
+        background-color: white;
+        color: #263238;
+
+        padding: 25px;
+        border-radius: 20px;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+        transition: transform 0.3s ease;
+      }
+
+      .codepen-card:hover {
+        transform: scale(1.03);
+      }
+
+      .codepen-card h3 {
+        color: seagreen;
+      }
+
+      /* =========================
+         BOTÃO VOLTAR
+      ========================= */
+
+      .voltar {
+        display: inline-block;
+
+        margin-top: 40px;
+        padding: 12px 25px;
+
+        background-color: tomato;
+        color: white;
+
+        text-decoration: none;
+        font-weight: bold;
+
+        border-radius: 20px;
+
+        transition:
+          background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .voltar:hover {
+        background-color: white;
+        color: seagreen;
+        transform: translateY(-3px);
+      }
+
+      /* =========================
+         MOBILE
+      ========================= */
+
+      @media (max-width: 800px) {
+        section {
+          padding: 30px 20px;
+        }
+
+        #inicio {
+          min-height: 80vh;
+        }
+
+        nav ul {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .hero-texto {
+          position: static;
+          padding-top: 120px;
+        }
+
+        .hero-texto h1 {
+          font-size: 2.3rem;
+        }
+
+        .tutorials,
+        .codepens-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .video {
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .hero-texto h1 {
+          font-size: 2rem;
+        }
+
+        .hero-texto p {
+          font-size: 1rem;
+        }
+
+        .video {
+          height: 210px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO -->
+
+    <section id="inicio">
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li>
+            <a href="index.html#disciplina">Interfaces Web</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="hero-texto">
+        <h1>Videotutoriais</h1>
+
+        <p>
+          Nesta página apresento alguns dos conteúdos que aprendi durante a
+          unidade curricular de Desenvolvimento de Interfaces Web.
+        </p>
+      </div>
+    </section>
+
+    <!-- VIDEOTUTORIAIS -->
+
+    <section id="videotutoriais">
+      <h2>Videotutoriais</h2>
+
+      <div class="tutorials">
+        <!-- TUTORIAL 1 -->
+
+        <article class="tutorial">
+          <h3>1. Seletores e sua composição</h3>
+
+          <p>
+            Neste tutorial explico como podemos selecionar diferentes seletores
+            CSS.
+          </p>
+
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/Xjrdn14OEdM?si=3hJj-DvFtwYgg94n"
+            title="Videotutorial sobre seletores CSS"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div class="codepen">
+            <p><strong>Exemplo no CodePen:</strong></p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e89c-c1be-7005-9da8-5280c979f931 "
+              target="_blank"
+              rel="noopener"
+            >
+              Ver CodePen
+            </a>
+          </div>
+        </article>
+
+        <!-- TUTORIAL 2 -->
+
+        <article class="tutorial">
+          <h3>2. Flexbox</h3>
+
+          <p>
+            Neste tutorial demonstro como utilizar Flexbox para organizar
+            elementos dentro de uma página.
+          </p>
+
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/RMs9MhG0Dhg?si=gUKsN5wE0808cBaR"
+            title="Videotutorial sobre Flexbox"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div class="codepen">
+            <p><strong>Exemplo no CodePen:</strong></p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e89b-cb06-7fbc-b2b7-13aa5f3f8f87"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver CodePen
+            </a>
+          </div>
+        </article>
+
+        <!-- TUTORIAL 3 -->
+
+        <article class="tutorial">
+          <h3>3. Grid</h3>
+
+          <p>
+            Neste tutorial explico como utilizar CSS Grid para criar diferentes
+            estruturas e organizar o conteúdo de uma página.
+          </p>
+
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/rK-5z99deUQ?si=hBoc7Xlzt_WcYwsE"
+            title="Videotutorial sobre CSS Grid"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div class="codepen">
+            <p><strong>Exemplo no CodePen:</strong></p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e88d-41ec-7c55-b9b9-0453d51d0184"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver CodePen
+            </a>
+          </div>
+        </article>
+
+        <!-- TUTORIAL 4 -->
+
+        <article class="tutorial">
+          <h3>4. Responsividade com Media Queries</h3>
+
+          <p>
+            Neste tutorial mostro como utilizar Media Queries para adaptar o
+            conteúdo de uma página a diferentes tamanhos de ecrã.
+          </p>
+
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/oVjgwbEHcMI?si=EwzBix0ZBPbhEtr3"
+            title="Videotutorial sobre Media Queries"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div class="codepen">
+            <p><strong>Exemplo no CodePen:</strong></p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e8a0-a993-72fe-8a3e-fc0ce0bcc184"
+              target="_blank"
+              rel="noopener"
+            >
+              Ver CodePen
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CODEPENS -->
+
+    <section id="codepens">
+      <div class="conteudo">
+        <h2>CodePens</h2>
+
+        <p>
+          Aqui estão reunidos os CodePens correspondentes aos conteúdos
+          apresentados nos videotutoriais.
+        </p>
+
+        <div class="codepens-grid">
+          <article class="codepen-card">
+            <h3>Seletores CSS</h3>
+            <p>
+              Exercício relacionado com seletores e composição de seletores.
+            </p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e89c-c1be-7005-9da8-5280c979f931 "
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir CodePen
+            </a>
+          </article>
+
+          <article class="codepen-card">
+            <h3>Flexbox</h3>
+            <p>
+              Exercício de organização e alinhamento de elementos com Flexbox.
+            </p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e89b-cb06-7fbc-b2b7-13aa5f3f8f87"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir CodePen
+            </a>
+          </article>
+
+          <article class="codepen-card">
+            <h3>Grid</h3>
+            <p>Exercício de construção de layouts utilizando CSS Grid.</p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e88d-41ec-7c55-b9b9-0453d51d0184"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir CodePen
+            </a>
+          </article>
+
+          <article class="codepen-card">
+            <h3>Media Queries</h3>
+            <p>
+              Exercício de adaptação de uma página para diferentes tamanhos de
+              ecrã.
+            </p>
+
+            <a
+              class="codepen-link"
+              href="https://codepen.io/editor/franciscotobias1/pen/01a0e8a0-a993-72fe-8a3e-fc0ce0bcc184"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir CodePen
+            </a>
+          </article>
+        </div>
+
+        <a class="voltar" href="index.html"> Voltar à página principal </a>
+      </div>
+    </section>
+  </body>
+</html>

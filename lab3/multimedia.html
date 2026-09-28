@@ -5,6 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia - Montemor-o-Novo</title>
     <link rel="stylesheet" href="../styles.css" />
+
+    <style>
+      .multimedia-section {
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #fotografias {
+        background-color: #f2cc8f;
+      }
+
+      #video {
+        background-color: #a8dadc;
+      }
+
+      #poesia {
+        background-color: #e9c46a;
+      }
+
+      .imagem-emblematica {
+        position: relative;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        overflow: hidden;
+      }
+
+      .imagem-emblematica img {
+        width: 100%;
+        min-height: 60vh;
+        object-fit: cover;
+      }
+
+      .frase-emblematica {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        color: white;
+        text-align: center;
+        font-size: 5vw;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px #000;
+      }
+
+      .fotografias {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .fotografias img {
+        width: 180px;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+
+      .fotografias img:hover {
+        transform: scale(1.08);
+        opacity: 0.85;
+      }
+
+      .video-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 450px;
+      }
+
+      .poema {
+        background-color: salmon;
+        width: fit-content;
+        max-width: 90%;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+      }
+
+      .poema p {
+        margin: 8px 0;
+        font-style: italic;
+      }
+
+      .poema p:nth-child(odd) {
+        color: white;
+      }
+
+      .poema p:nth-child(even) {
+        color: yellow;
+      }
+
+      @media (width <= 600px) {
+        .multimedia-section {
+          min-height: auto;
+          padding: 30px 10px;
+        }
+
+        .imagem-emblematica img {
+          min-height: 40vh;
+        }
+
+        .frase-emblematica {
+          font-size: 8vw;
+        }
+
+        .fotografias img {
+          width: 130px;
+        }
+
+        .video-container iframe {
+          height: 250px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -20,40 +143,52 @@
     </header>
 
     <main>
-      <h2>Multimédia</h2>
-
       <section id="fotografias" class="multimedia-section">
-        <h2>Fotografias</h2>
+  <h2>Fotografias</h2>
 
-        <div class="fotografias">
-          <img
-            src="images/montado.jpeg"
-            alt="Paisagem do montado alentejano"
-          />
-          <img src="images/castelo.jpg" alt="Castelo de Montemor-o-Novo" />
-        </div>
-      </section>
+  <div class="fotografias">
+    <img src="images/arquio.jpg" alt="Fotografia 1" />
+
+    <img src="images/arquitetura.jpeg" alt="Fotografia 2" />
+
+    <img src="images/castelo.jpg" alt="Fotografia 3" />
+
+    <img src="images/castelomon.jpg" alt="Fotografia 4" />
+
+    <img src="images/grutasescou.jpg" alt="Fotografia 5" />
+
+    <img src="images/montado.jpeg" alt="Fotografia 6" />
+
+    <img src="images/monvista.jpg" alt="Fotografia 7" />
+
+    <img src="images/nsravisitacao.jpg" alt="Fotografia 8" />
+  </div>
+</section>
 
       <section id="video" class="multimedia-section">
         <h2>Vídeo</h2>
 
-        <video controls width="100%">
-          <source
-            src="https://cdn.pixabay.com/video/2020/05/24/40028-424758991_large.mp4"
-            type="video/mp4"
-          />
-          O teu navegador não suporta vídeo HTML5.
-        </video>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/_7a29-Ga6WY?si=Lnkagi8HAbEKMNea"
+            title="Vídeo sobre Montemor-o-Novo"
+            allowfullscreen
+          ></iframe>
+        </div>
       </section>
 
       <section id="poesia" class="multimedia-section">
         <h2>Poesia</h2>
 
         <div class="poema">
-          <p>Alentejo de sol e terra,</p>
-          <p>de silêncio e tradição,</p>
-          <p>onde a paisagem encerra</p>
-          <p>histórias no coração.</p>
+         <p>No outeiro de pedra dorme o castelo,</p>
+          <p>guarda de um tempo que o vento não leva.</p>
+          <p>Sob o montado, a sombra é castelo</p>
+          <p>de sobreiros que a terra sustenta e eleva.</p>
+          <p>Nas grutas do Escoural, ecoa o passado,</p>
+          <p>vozes de mãos que a pedra gravaram.</p>
+          <p>Montemor-o-Novo, coração alentejano,</p>
+          <p>onde o silêncio e a história se juntaram.</p>
         </div>
       </section>
 
@@ -65,34 +200,6 @@
 
         <div class="frase-emblematica">
           Montemor-o-Novo, entre história e paisagem
-        </div>
-      </section>
-
-      <section class="video-background">
-        <video muted loop playsinline controls>
-          <source
-            src="https://cdn.pixabay.com/video/2020/05/24/40028-424758991_large.mp4"
-            type="video/mp4"
-          />
-          O teu navegador não suporta vídeo HTML5.
-        </video>
-
-        <div class="video-background-conteudo">
-          <h2>Alentejo em movimento</h2>
-          <p>
-            Uma paisagem marcada pela natureza, pela tranquilidade e pelo
-            horizonte alentejano.
-          </p>
-        </div>
-      </section>
-
-      <section class="parallax">
-        <div class="parallax-conteudo">
-          <h2>Entre história e natureza</h2>
-          <p>
-            Montemor-o-Novo combina património, paisagem e tradição numa
-            experiência tipicamente alentejana.
-          </p>
         </div>
       </section>
     </main>

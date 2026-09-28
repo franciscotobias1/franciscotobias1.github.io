@@ -1,119 +1,91 @@
 <!doctype html>
+
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia - Montemor-o-Novo</title>
     <link rel="stylesheet" href="../styles.css" />
-    <style>
-      .fotografias {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .fotografias img {
-        width: 150px;
-        border-radius: 20px;
-      }
-
-      .poema {
-        background-color: salmon;
-        width: fit-content;
-        max-width: 90%;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px auto;
-      }
-
-      .poema p {
-        margin: 8px 0;
-        font-style: italic;
-      }
-
-      .poema p:nth-child(odd) {
-        color: white;
-      }
-
-      .poema p:nth-child(even) {
-        color: yellow;
-      }
-    </style>
   </head>
 
   <body>
     <header>
       <h1>Montemor-o-Novo</h1>
 
-      <nav aria-label="Navegação principal">
-        <a href="../index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
-    </header>
+```
+  <nav aria-label="Navegação principal">
+    <a href="../index.html">Home</a>
+    <a href="local.html">Localização</a>
+    <a href="multimedia.html">Multimédia</a>
+    <a href="info.html">Informação</a>
+  </nav>
+</header>
 
-    <main>
-      <h2>Multimédia</h2>
+<main>
+  <h2>Multimédia</h2>
 
-      <p>
-        Nesta página apresento alguns conteúdos multimédia sobre a minha cidade,
-        Montemor-o-Novo.
-      </p>
+  <p>
+    Nesta página apresento alguns conteúdos multimédia sobre a minha cidade,
+    Montemor-o-Novo.
+  </p>
 
-      <nav class="ancoras" aria-label="Links da página">
-        <a href="#fotografias">Fotografias</a>
-        <a href="#video">Vídeo</a>
-        <a href="#poesia">Poesia</a>
-      </nav>
+  <nav class="ancoras" aria-label="Links da página">
+    <a href="#fotografias">Fotografias</a>
+    <a href="#video">Vídeo</a>
+    <a href="#poesia">Poesia</a>
+  </nav>
 
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
-        <div class="fotografias">
-          <img src="images/castelo.jpg" alt="Castelo de Montemor-o-Novo" />
-          <img
-            src="images/nsravisitacao.jpg"
-            alt="igreja da Nossa Senhora da Visitação"
-          />
-          <img src="images/grutasescou.jpg" alt="Grutas do Escoural" />
-          <img src="images/montado.jpeg" alt="Montado" />
-          <img src="images/vistaaerea.jpg" alt="Paisagem da Cidade" />
-          <img src="images/arquio.jpg" alt="Escavações Arqueológicas" />
-          <img src="images/muralha.jpeg" alt="Muralha do Castelo" />
-          <img src="images/arquitetura.jpeg" alt="Arquitetura da Cidade" />
-        </div>
-      </section>
+  <section>
+    <h3 id="fotografias">Fotografias</h3>
 
-      <h3 id="video">Vídeo</h3>
+    <div class="fotografias">
+      <img src="images/castelo.jpg" alt="Castelo de Montemor-o-Novo" />
+      <img
+        src="images/nsravisitacao.jpg"
+        alt="Igreja da Nossa Senhora da Visitação"
+      />
+      <img src="images/grutasescou.jpg" alt="Grutas do Escoural" />
+      <img src="images/montado.jpeg" alt="Montado" />
+      <img src="images/vistaaerea.jpg" alt="Paisagem da cidade" />
+      <img src="images/arquio.jpg" alt="Escavações arqueológicas" />
+      <img src="images/muralha.jpeg" alt="Muralha do Castelo" />
+      <img src="images/arquitetura.jpeg" alt="Arquitetura da cidade" />
+    </div>
+  </section>
 
-      <p>Vídeo sobre Montemor-o-Novo:</p>
+  <h3 id="video">Vídeo</h3>
 
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/_7a29-Ga6WY"
-        title="Vídeo sobre Montemor-o-Novo"
-        allowfullscreen
-      ></iframe>
+  <p>Vídeo sobre Montemor-o-Novo:</p>
 
-      <section>
-        <h3 id="poesia">Poesia</h3>
-        <div class="poema">
-          <p>No outeiro de pedra dorme o castelo,</p>
-          <p>guarda de um tempo que o vento não leva.</p>
-          <p>Sob o montado, a sombra é castelo</p>
-          <p>de sobreiros que a terra sustenta e eleva.</p>
-          <p>Nas grutas do Escoural, ecoa o passado,</p>
-          <p>vozes de mãos que a pedra gravaram.</p>
-          <p>Montemor-o-Novo, coração alentejano,</p>
-          <p>onde o silêncio e a história se juntaram.</p>
-        </div>
-      </section>
-    </main>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/_7a29-Ga6WY"
+    title="Vídeo sobre Montemor-o-Novo"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
 
-    <footer>
-      <p>DIW 2026</p>
-    </footer>
+  <section>
+    <h3 id="poesia">Poesia</h3>
+
+    <div class="poema">
+      <p>No outeiro de pedra dorme o castelo,</p>
+      <p>guarda de um tempo que o vento não leva.</p>
+      <p>Sob o montado, a sombra é castelo</p>
+      <p>de sobreiros que a terra sustenta e eleva.</p>
+      <p>Nas grutas do Escoural, ecoa o passado,</p>
+      <p>vozes de mãos que a pedra gravaram.</p>
+      <p>Montemor-o-Novo, coração alentejano,</p>
+      <p>onde o silêncio e a história se juntaram.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>DIW 2026</p>
+</footer>
+```
+
   </body>
 </html>

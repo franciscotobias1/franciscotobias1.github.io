@@ -1,6 +1,7 @@
 const LIMITE = 50;
 const TEXTO_ESTADO = "Interage com a página para ver os eventos em ação.";
-const TEXTO_LEGENDA = "Passa o cursor sobre o gráfico. Clica para alternar a versão a preto e branco.";
+const TEXTO_LEGENDA =
+  "Passa o cursor sobre o gráfico. Clica para alternar a versão a preto e branco.";
 
 const estado = document.querySelector("#estado");
 const valor = document.querySelector("#valor");
@@ -34,9 +35,12 @@ function atualizar() {
   valor.textContent = total;
   valor.style.color = cor;
   valor.style.transform = "scale(1.08)";
-  setTimeout(() => { valor.style.transform = "scale(1)"; }, 120);
+  setTimeout(() => {
+    valor.style.transform = "scale(1)";
+  }, 120);
 
-  situacao.textContent = texto + " (" + total + " de " + LIMITE + " pessoas, " + percentagem + "%)";
+  situacao.textContent =
+    texto + " (" + total + " de " + LIMITE + " pessoas, " + percentagem + "%)";
   preenchimento.style.width = percentagem + "%";
   preenchimento.style.backgroundColor = cor;
 }
@@ -74,7 +78,8 @@ function seguirRato(evento) {
   guiaX.style.left = x + "px";
   guiaY.style.top = y + "px";
   area.style.backgroundColor = "hsl(217, 70%, " + (96 - px * 0.14) + "%)";
-  coordenadas.textContent = "x: " + x + " px (" + px + "%)   y: " + y + " px (" + py + "%)";
+  coordenadas.textContent =
+    "x: " + x + " px (" + px + "%)   y: " + y + " px (" + py + "%)";
 }
 
 function sairArea() {
@@ -87,7 +92,8 @@ function sairArea() {
 function realcar() {
   grafico.style.transform = "scale(1.02)";
   grafico.style.boxShadow = "0 8px 24px rgba(15, 23, 42, 0.18)";
-  legenda.textContent = "Pico de ocupação à sexta-feira, com cerca de 42 pessoas.";
+  legenda.textContent =
+    "Pico de ocupação à sexta-feira, com cerca de 42 pessoas.";
 }
 
 function repor() {
@@ -103,3 +109,16 @@ function alternarCor() {
     ? "Versão a preto e branco, adequada para impressão."
     : "Versão a cores reposta.";
 }
+
+Object.assign(window, {
+  alterar,
+  adicionarGrupo,
+  reiniciar,
+  dica,
+  entrarArea,
+  seguirRato,
+  sairArea,
+  realcar,
+  repor,
+  alternarCor,
+});

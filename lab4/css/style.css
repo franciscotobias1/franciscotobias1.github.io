@@ -36,6 +36,12 @@ main button {
   cursor: pointer;
 }
 
+main input {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+
 main img {
   width: 100px;
   vertical-align: middle;

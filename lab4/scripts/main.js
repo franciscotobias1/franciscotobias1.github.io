@@ -1,6 +1,8 @@
 const passa = document.querySelector("#passa");
 const pinta = document.querySelector("#pinta");
-const zona = document.querySelector("#zona");
+const corpo = document.querySelector("body");
+const mensagem = document.querySelector("#mensagem");
+const campo = document.querySelector("#cor");
 const tamanho = document.querySelector("#tamanho");
 const imagem = document.querySelector("#imagem");
 const contador = document.querySelector("#contador");
@@ -23,9 +25,18 @@ function pintar(cor) {
   pinta.style.color = cor;
 }
 
-function mover(evento) {
-  zona.textContent = "x: " + evento.clientX + "  y: " + evento.clientY;
-  zona.style.backgroundColor = "hsl(" + (evento.clientX % 360) + ", 70%, 90%)";
+function pintarFundo() {
+  const cor = campo.value.trim().toLowerCase();
+
+  if (cor === "") {
+    corpo.style.backgroundColor = "";
+    mensagem.textContent = "Escreve uma cor em inglês:";
+  } else if (CSS.supports("color", cor)) {
+    corpo.style.backgroundColor = cor;
+    mensagem.textContent = "Fundo pintado de " + cor + "!";
+  } else {
+    mensagem.textContent = "Não conheço a cor " + cor + ". Tenta outra:";
+  }
 }
 
 function alternarTamanho() {
@@ -46,7 +57,7 @@ Object.assign(window, {
   entrar,
   sair,
   pintar,
-  mover,
+  pintarFundo,
   alternarTamanho,
   contar,
 });

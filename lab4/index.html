@@ -24,7 +24,10 @@
           <button type="button" onclick="pintar('green')">Green</button>
           <button type="button" onclick="pintar('blue')">Blue</button>
         </li>
-        <li id="zona" onmousemove="mover(event)">Mexe o rato por aqui...</li>
+        <li>
+          <label id="mensagem" for="cor">Escreve uma cor em inglês:</label>
+          <input type="text" id="cor" oninput="pintarFundo()" />
+        </li>
         <li>
           <span id="tamanho">Faz duplo clique na imagem:</span>
           <img

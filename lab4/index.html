@@ -8,84 +8,37 @@
   </head>
   <body>
     <header>
-      <h1>Eventos do rato em JavaScript</h1>
-      <p id="estado">Interage com a página para ver os eventos em ação.</p>
+      <h1>Lab 4 - Eventos do rato</h1>
     </header>
 
     <main>
-      <section aria-labelledby="t-lotacao">
-        <h2 id="t-lotacao">Controlo de lotação</h2>
-        <p
-          id="valor"
-          ondblclick="adicionarGrupo()"
-          title="Duplo clique regista um grupo de 5 pessoas"
-        >
-          0
-        </p>
-        <p id="situacao">Sala vazia</p>
-        <div class="barra" aria-hidden="true">
-          <div id="preenchimento"></div>
-        </div>
-        <div class="botoes">
-          <button
-            type="button"
-            onclick="alterar(1)"
-            onmouseover="dica('Regista a entrada de uma pessoa')"
-            onmouseout="dica('')"
+      <ol>
+        <li>
+          <span id="passa" onmouseover="entrar()" onmouseout="sair()"
+            >Passa por aqui!</span
           >
-            Entrada
-          </button>
-          <button
-            type="button"
-            onclick="alterar(-1)"
-            onmouseover="dica('Regista a saída de uma pessoa')"
-            onmouseout="dica('')"
-          >
-            Saída
-          </button>
-          <button
-            type="button"
-            class="secundario"
-            onclick="reiniciar()"
-            onmouseover="dica('Repõe a contagem a zero')"
-            onmouseout="dica('')"
-          >
-            Repor
-          </button>
-        </div>
-      </section>
-
-      <section aria-labelledby="t-area">
-        <h2 id="t-area">Área de medição</h2>
-        <div
-          id="area"
-          onmousemove="seguirRato(event)"
-          onmouseover="entrarArea()"
-          onmouseout="sairArea()"
-        >
-          <div id="guia-x"></div>
-          <div id="guia-y"></div>
-          <p id="coordenadas">Move o cursor para dentro da área.</p>
-        </div>
-      </section>
-
-      <section aria-labelledby="t-grafico">
-        <h2 id="t-grafico">Ocupação semanal</h2>
-        <figure>
+        </li>
+        <li>
+          <span id="pinta">Pinta-me!</span>
+          <button type="button" onclick="pintar('red')">Red</button>
+          <button type="button" onclick="pintar('green')">Green</button>
+          <button type="button" onclick="pintar('blue')">Blue</button>
+        </li>
+        <li id="zona" onmousemove="mover(event)">Mexe o rato por aqui...</li>
+        <li>
+          <span id="tamanho">Faz duplo clique na imagem:</span>
           <img
-            id="grafico"
-            src="images/ocupacao.svg"
-            alt="Gráfico de barras com a ocupação média da sala por dia da semana"
-            onmouseover="realcar()"
-            onmouseout="repor()"
-            onclick="alternarCor()"
+            id="imagem"
+            src="images/java.png"
+            alt="Logótipo de Java"
+            ondblclick="alternarTamanho()"
           />
-          <figcaption id="legenda">
-            Passa o cursor sobre o gráfico. Clica para alternar a versão a preto
-            e branco.
-          </figcaption>
-        </figure>
-      </section>
+        </li>
+        <li>
+          <button type="button" onclick="contar()">Conta!</button>
+          <span id="contador">0</span>
+        </li>
+      </ol>
     </main>
 
     <footer>

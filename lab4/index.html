@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab 4 - Eventos do rato</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Eventos do rato em JavaScript</h1>
+      <p id="estado">Interage com a página para ver os eventos em ação.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="t-lotacao">
+        <h2 id="t-lotacao">Controlo de lotação</h2>
+        <p
+          id="valor"
+          ondblclick="adicionarGrupo()"
+          title="Duplo clique regista um grupo de 5 pessoas"
+        >
+          0
+        </p>
+        <p id="situacao">Sala vazia</p>
+        <div class="barra" aria-hidden="true">
+          <div id="preenchimento"></div>
+        </div>
+        <div class="botoes">
+          <button
+            onclick="alterar(1)"
+            onmouseover="dica('Regista a entrada de uma pessoa')"
+            onmouseout="dica('')"
+          >
+            Entrada
+          </button>
+          <button
+            onclick="alterar(-1)"
+            onmouseover="dica('Regista a saída de uma pessoa')"
+            onmouseout="dica('')"
+          >
+            Saída
+          </button>
+          <button
+            class="secundario"
+            onclick="reiniciar()"
+            onmouseover="dica('Repõe a contagem a zero')"
+            onmouseout="dica('')"
+          >
+            Repor
+          </button>
+        </div>
+      </section>
+
+      <section aria-labelledby="t-area">
+        <h2 id="t-area">Área de medição</h2>
+        <div
+          id="area"
+          onmousemove="seguirRato(event)"
+          onmouseover="entrarArea()"
+          onmouseout="sairArea()"
+        >
+          <div id="guia-x"></div>
+          <div id="guia-y"></div>
+          <p id="coordenadas">Move o cursor para dentro da área.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="t-grafico">
+        <h2 id="t-grafico">Ocupação semanal</h2>
+        <figure>
+          <img
+            id="grafico"
+            src="images/ocupacao.svg"
+            alt="Gráfico de barras com a ocupação média da sala por dia da semana"
+            onmouseover="realcar()"
+            onmouseout="repor()"
+            onclick="alternarCor()"
+          />
+          <figcaption id="legenda">
+            Passa o cursor sobre o gráfico. Clica para alternar a versão a preto
+            e branco.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer>
+      <p>Lab 4 - Desenvolvimento de Interfaces Web</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

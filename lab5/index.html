@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      main li {
+        margin-bottom: 40px;
+        font-size: 1.5rem;
+      }
+
+      main button {
+        font-size: 1rem;
+      }
+
+      main input {
+        font-size: 1rem;
+      }
+
+      main select {
+        font-size: 1rem;
+      }
+
+      main #bolas {
+        height: 200px;
+        margin-top: 10px;
+        background-color: gray;
+        display: flex;
+        gap: 10px;
+      }
+
+      main #bolas div {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: tomato;
+      }
+
+      @media (max-width: 600px) {
+        main li {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <ol>
+        <li id="passa">Passa por aqui!</li>
+
+        <li>
+          <span id="pinta">Pinta-me se conseguires!</span>
+          <button class="cor" data-cor="orange">Laranja</button>
+          <button class="cor" data-cor="purple">Roxo</button>
+          <button class="cor" data-cor="deeppink">Rosa</button>
+        </li>
+
+        <li>
+          Experimenta escrever...
+          <input id="escreve" type="text" />
+        </li>
+
+        <li>
+          Escolha uma cor:
+          <select id="cor">
+            <option value="white">White</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+          </select>
+        </li>
+
+        <li>
+          <button id="conta">Conta!</button>
+          <span id="numero">0</span>
+        </li>
+
+        <li>
+          <select id="direcao">
+            <option value="row">row</option>
+            <option value="row-reverse">row-reverse</option>
+            <option value="column">column</option>
+            <option value="column-reverse">column-reverse</option>
+          </select>
+
+          <div id="bolas">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </li>
+
+        <li>
+          <form>
+            <input id="nome" type="text" placeholder="insira o seu nome" />
+            <input id="idade" type="number" placeholder="insira a sua idade" />
+            <input type="submit" />
+          </form>
+          <p id="mensagem"></p>
+        </li>
+
+        <li>
+          <button id="decrementar">-</button>
+          <span id="valor">0</span>
+          <button id="incrementar">+</button>
+          <button id="reset">Reset</button>
+        </li>
+
+        <li>Automatic Counter: <span id="automatico">0</span></li>
+      </ol>
+    </main>
+
+    <script>
+      const body = document.querySelector("body");
+      const passa = document.querySelector("#passa");
+      const pinta = document.querySelector("#pinta");
+      const botoes = document.querySelectorAll(".cor");
+      const escreve = document.querySelector("#escreve");
+      const cor = document.querySelector("#cor");
+      const conta = document.querySelector("#conta");
+      const numero = document.querySelector("#numero");
+      const direcao = document.querySelector("#direcao");
+      const bolas = document.querySelector("#bolas");
+      const formulario = document.querySelector("form");
+      const nome = document.querySelector("#nome");
+      const idade = document.querySelector("#idade");
+      const mensagem = document.querySelector("#mensagem");
+      const botaoMenos = document.querySelector("#decrementar");
+      const botaoMais = document.querySelector("#incrementar");
+      const botaoReset = document.querySelector("#reset");
+      const valor = document.querySelector("#valor");
+      const automatico = document.querySelector("#automatico");
+
+      const cores = ["lightblue", "lightpink", "lightgreen", "khaki"];
+      let indice = 0;
+      let contador = 0;
+      let segundos = 0;
+
+      if (!localStorage.getItem("counter")) {
+        localStorage.setItem("counter", 0);
+      }
+
+      let counter = Number(localStorage.getItem("counter"));
+      valor.textContent = counter;
+
+      passa.addEventListener("mouseover", () => {
+        passa.textContent = "Obrigado por passares!";
+      });
+
+      passa.addEventListener("mouseout", function () {
+        passa.textContent = "Passa por aqui!";
+      });
+
+      botoes.forEach((botao) => {
+        botao.addEventListener("click", () => {
+          pinta.style.color = botao.dataset.cor;
+        });
+      });
+
+      escreve.addEventListener("input", function () {
+        escreve.style.backgroundColor = cores[indice];
+        indice = (indice + 1) % 4;
+      });
+
+      cor.addEventListener("change", function () {
+        body.style.backgroundColor = this.value;
+      });
+
+      conta.addEventListener("click", function () {
+        contador++;
+        numero.textContent = contador;
+      });
+
+      direcao.addEventListener("change", function () {
+        bolas.style.flexDirection = this.value;
+      });
+
+      formulario.onsubmit = (e) => {
+        e.preventDefault();
+        mensagem.textContent =
+          "Olá, o " + nome.value + " tem " + idade.value + "!";
+      };
+
+      function atualizar() {
+        valor.textContent = counter;
+        localStorage.setItem("counter", counter);
+      }
+
+      function incrementar() {
+        counter++;
+        atualizar();
+      }
+
+      function decrementar() {
+        counter--;
+        atualizar();
+      }
+
+      function reiniciar() {
+        counter = 0;
+        atualizar();
+      }
+
+      function contar() {
+        segundos++;
+        automatico.textContent = segundos;
+      }
+
+      botaoMais.addEventListener("click", incrementar);
+      botaoMenos.addEventListener("click", decrementar);
+      botaoReset.addEventListener("click", reiniciar);
+
+      setInterval(contar, 1000);
+    </script>
+  </body>
+</html>

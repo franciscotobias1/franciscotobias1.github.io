@@ -1,31 +1,73 @@
-// declaração de variaveis
-      const nodeInputNumero = document.querySelector("form input[type='number']");
-      const nodeUlSubmit = document.querySelector("form input[type='submit']");
-      const nodeUlColecao = document.querySelector("#colecao ul");
-      const colecao = [];
-      const nodeForm = document.querySelector("form");
-      const nodeSpanTotal = document.querySelector("#colecao h3 span");
+const nodeInputNumero = document.querySelector("form input[type='number']");
+const nodeUlColecao = document.querySelector("#colecao ul");
+const nodeUlRepetidos = document.querySelector("#repetidos ul");
+const nodeForm = document.querySelector("form");
+const nodeSpanTotal = document.querySelector("#colecao h3 span");
+const nodeSpanTotalRepetidos = document.querySelector("#repetidos h3 span");
+const colecao = JSON.parse(localStorage.getItem("colecao")) || [];
+const repetidos = JSON.parse(localStorage.getItem("repetidos")) || [];
+let totalRepetidos = repetidos.length;
 
-      // Event Handlers
+function guardaStorage() {
+  localStorage.setItem("colecao", JSON.stringify(colecao));
+  localStorage.setItem("repetidos", JSON.stringify(repetidos));
+}
 
-      function guardaCarta() {
-          const numero = Number(nodeInputNumero.value);
-          colecao.push(numero);
-          colecao.sort((a, b) => a - b);
-          atualizaLista(colecao, nodeUlColecao);
-          nodeSpanTotal.textContent = colecao.length;
-      }
+function guardaCarta() {
+  const numero = Number(nodeInputNumero.value);
 
-      function atualizaLista(colecao, nodeUlColecao) {
-          nodeUlColecao.innerHTML = "";
-          colecao.forEach(numero => {
-            nodeUlColecao.innerHTML += "<li>" + numero + "</li>";
-          })
-      }
+  if (colecao.includes(numero)) {
+    repetidos.push(numero);
+    repetidos.sort((a, b) => a - b);
+    totalRepetidos++;
+    atualizaLista(repetidos, nodeUlRepetidos);
+    nodeSpanTotalRepetidos.textContent = totalRepetidos;
+  } else {
+    colecao.push(numero);
+    colecao.sort((a, b) => a - b);
+    atualizaLista(colecao, nodeUlColecao);
+    nodeSpanTotal.textContent = colecao.length;
+  }
+  guardaStorage();
+}
 
-      // Event Listeners
+function atualizaLista(lista, nodeUl) {
+  nodeUl.innerHTML = "";
+  lista.forEach(numero => {
+    if (lista === repetidos) {
+      nodeUl.innerHTML += "<li>" + numero + " <button>Eliminar</button></li>";
+    } else {
+      nodeUl.innerHTML += "<li>" + numero + "</li>";
+    }
+  });
+  if (lista === repetidos) {
+    associaEventosEliminar();
+  }
+}
 
-      nodeForm.addEventListener("submit", event => {
-        event.preventDefault();
-        guardaCarta();
-      })
+function eliminaRepetido(indice) {
+  repetidos.splice(indice, 1);
+  totalRepetidos--;
+  nodeSpanTotalRepetidos.textContent = totalRepetidos;
+  atualizaLista(repetidos, nodeUlRepetidos);
+  guardaStorage();
+}
+
+function associaEventosEliminar() {
+  const botoes = document.querySelectorAll("#repetidos li button");
+  botoes.forEach((botao, indice) => {
+    botao.addEventListener("click", () => {
+      eliminaRepetido(indice);
+    });
+  });
+}
+
+nodeForm.addEventListener("submit", event => {
+  event.preventDefault();
+  guardaCarta();
+});
+
+atualizaLista(colecao, nodeUlColecao);
+atualizaLista(repetidos, nodeUlRepetidos);
+nodeSpanTotal.textContent = colecao.length;
+nodeSpanTotalRepetidos.textContent = totalRepetidos;

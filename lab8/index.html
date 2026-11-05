@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Loja</h1>
+      <nav>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#cesto">Cesto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Produtos</h2>
+      <section id="filtros">
+        <label for="categoria">Filtrar</label>
+        <select id="categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+
+        <label for="ordem">Ordenar</label>
+        <select id="ordem">
+          <option value="">Ordenar pelo preço</option>
+          <option value="desc">Preço Decrescente</option>
+          <option value="asc">Preço Crescente</option>
+        </select>
+
+        <label for="pesquisa">Procurar</label>
+        <input id="pesquisa" type="text" placeholder="pesquise por produto" />
+      </section>
+      <section id="produtos"></section>
+
+      <h2>Cesto</h2>
+      <section id="cesto"></section>
+      <p id="total">Total: 0.00 €</p>
+
+      <section id="compra">
+        <label
+          ><input id="estudante" type="checkbox" /> És estudante do
+          DEISI?</label
+        >
+        <label for="cupao">Cupão de desconto</label>
+        <input id="cupao" type="text" />
+        <button id="comprar">Comprar</button>
+      </section>
+      <p id="resultado"></p>
+    </main>
+
+    <footer>DIW 2026</footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
